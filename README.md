@@ -17,8 +17,8 @@ prints the path back out to the requester
        response.setStatus(200)
        out.write("got path " + path)
        out.close
-    }})
-  }
+     }})
+   }
 
 More examples can be found in src/examples.
 
