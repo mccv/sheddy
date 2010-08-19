@@ -17,20 +17,20 @@ to simulate your production server fairly easily.
 As an example, the following code starts a server on port 8080 and
 prints the path back out to the requester
 
-   import com.twitter.sheddy._
-   import org.mortbay.jetty._
-
-   object SheddyExample {
-     val server = new Sheddy(8080, { case (path, request, response) => {
-       val out = response.getWriter()
-       response.setStatus(200)
-       out.write("got path " + path)
-       out.close
-     }})
-     ... do stuff to the server here ...
-     // now destroy server
-     server.stop
-   }
+    import com.twitter.sheddy._
+    import org.mortbay.jetty._
+ 
+    object SheddyExample {
+      val server = new Sheddy(8080, { case (path, request, response) => {
+        val out = response.getWriter()
+        response.setStatus(200)
+        out.write("got path " + path)
+        out.close
+      }})
+      ... do stuff to the server here ...
+      // now destroy server
+      server.stop
+    }
 
 More examples can be found in src/examples.
 
